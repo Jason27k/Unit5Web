@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BreweryList = ({ breweryCities, breweriesData, className }) => {
  
@@ -43,7 +44,11 @@ return (
         <tbody>
           {breweryCities.map(city => (
             <tr key={city}>
-              <td className="px-4 py-2 font-bold">{formatCityTitle(city)}</td>
+              <td className="px-4 py-2 font-bold">
+              <Link to={`/${city}`} className='hover:underline'>
+                {formatCityTitle(city)}
+              </Link>
+             </td>
               {filteredBreweryTypes.map(breweryType => (
                 <td key={breweryType} className="px-4 py-2">
                   {breweriesData[city]?.[breweryType]?.length || 0}

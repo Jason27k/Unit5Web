@@ -6,8 +6,6 @@ import {
   } from "@/components/ui/menubar"
 
 const BreweryMenu = ({ breweryTypes, handleTypeChange, className }) => {
-  console.log(breweryTypes)
-  console.log(breweryTypes.length)
   return (
     <div className={`inline-block ${className}`}>
         <Menubar>
